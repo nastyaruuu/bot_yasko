@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}API: редактировать волонтера{% endblock %}
+{% block body %}
+<h5>Для того чтобы воспользоваться API и редактировать волонтера через API: <pre></pre></h5>
+<h6>import requests<pre></pre>
+
+    data = {<pre></pre>
+      "login": "логин",<pre></pre>
+      "password": "пароль",<pre></pre>
+      "surname": "фамилия",<pre></pre>
+      "name": "имя",<pre></pre>
+      "age": "11",<pre></pre>
+      "speciality": "специальность",<pre></pre>
+      "adress": "адрес"<pre></pre>
+    }<pre></pre>
+    id = '1'<pre></pre>
+    url = 'http://my-domains.ru/api/volunteers/edit'<pre></pre>
+    response = requests.put(url+id, json=data)<pre></pre>
+    
+    if response.status_code == 200:<pre></pre>
+        print("Запрос успешно отправлен!")<pre></pre>
+    else:<pre></pre>
+        print("Произошла ошибка при отправке запроса.")</h6>
+
+{% endblock %}
